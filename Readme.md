@@ -11,22 +11,7 @@ created based on [Alex Quent’s
 MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj’s blog
 post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 
-\#Installing the package Start by installing the devtool’s package ’
-
-Then download this package from github
-
-``` r
-library(devtools)
-install_github("mvainre/PraxisColour")
-```
-
-Now you’re ready to use it:
-
-``` r
-library(PraxisColour)
-```
-
-\#The colour palettes
+# The colour palettes
 
 ``` r
 praxis_pal("main")(3)
@@ -93,3 +78,20 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 ```
 
 ![](Readme_files/figure-gfm/bargradient-1.png)<!-- -->
+
+# Installing the package
+
+Start by installing the devtool’s package
+
+Then download this package from github
+
+``` r
+library(devtools)
+install_github("mvainre/PraxisColour")
+```
+
+Now you’re ready to use it:
+
+``` r
+library(PraxisColour)
+```

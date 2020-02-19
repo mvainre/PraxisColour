@@ -16,23 +16,7 @@ library(PraxisColour)
 
 This is a R package to employ the unofficial [Praxis Centre for Policy Studies](http://www.praxis.ee/en/) colour palette. The package was created based on [Alex Quent's MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj's blog post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 
-#Installing the package
-Start by installing the devtool's package '
-```{r devtoolsInstall, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-install.packages("devtools")
-```
-
-Then download this package from github
-```{r GithubDL, message=FALSE, warning=FALSE}
-library(devtools)
-install_github("mvainre/PraxisColour")
-```
-Now you're ready to use it:
-```{r Run, message=FALSE, warning=FALSE, include=TRUE}
-library(PraxisColour)
-```
-
-#The colour palettes
+# The colour palettes
 
 ```{r palettesMain, message=FALSE, warning=FALSE, include=TRUE}
 praxis_pal("main")(3)
@@ -74,4 +58,20 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
   geom_bar() +
   scale_fill_praxis(palette = "traffic", guide = "none") +
   theme_ipsum_tw(grid=FALSE, axis_text_size = 6)
+```
+
+# Installing the package
+Start by installing the devtool's package
+```{r devtoolsInstall, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+install.packages("devtools")
+```
+
+Then download this package from github
+```{r GithubDL, message=FALSE, warning=FALSE}
+library(devtools)
+install_github("mvainre/PraxisColour")
+```
+Now you're ready to use it:
+```{r Run, message=FALSE, warning=FALSE, include=TRUE}
+library(PraxisColour)
 ```
