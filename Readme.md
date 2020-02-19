@@ -14,6 +14,10 @@ post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
 # The colour palettes
 
 ``` r
+library(ggplot2)
+library(hrbrthemes)
+library(PraxisColour)
+
 praxis_pal("main")(3)
 ```
 
@@ -83,12 +87,52 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 
 Start by installing the devtool’s package
 
+``` r
+install.packages("devtools")
+```
+
 Then download this package from github
 
 ``` r
 library(devtools)
 install_github("mvainre/PraxisColour")
 ```
+
+    ##   
+      
+      
+       checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' ...
+      
+       checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' ... 
+      
+    v  checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' (733ms)
+    ## 
+      
+      
+      
+    -  preparing 'PraxisColour':
+    ##    checking DESCRIPTION meta-information ...
+      
+       checking DESCRIPTION meta-information ... 
+      
+    v  checking DESCRIPTION meta-information
+    ## 
+      
+      
+      
+    -  checking for LF line-endings in source and make files and shell scripts
+    ## 
+      
+    -  checking for empty or unneeded directories
+    ## 
+      
+      
+      
+    -  building 'PraxisColour_0.1.0.tar.gz'
+    ## 
+      
+       
+    ## 
 
 Now you’re ready to use it:
 

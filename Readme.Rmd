@@ -7,9 +7,6 @@ output: github_document
 
 ``````{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-library(ggplot2)
-library(hrbrthemes)
-library(PraxisColour)
 ```
 
 # About PraxisColour
@@ -19,6 +16,10 @@ This is a R package to employ the unofficial [Praxis Centre for Policy Studies](
 # The colour palettes
 
 ```{r palettesMain, message=FALSE, warning=FALSE, include=TRUE}
+library(ggplot2)
+library(hrbrthemes)
+library(PraxisColour)
+
 praxis_pal("main")(3)
 praxis_pal("main")(10)
 ```
@@ -61,8 +62,10 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 ```
 
 # Installing the package
+
 Start by installing the devtool's package
-```{r devtoolsInstall, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+
+```{r devtoolsInstall, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 install.packages("devtools")
 ```
 
