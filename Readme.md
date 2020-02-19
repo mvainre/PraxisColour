@@ -5,11 +5,26 @@ Maris Vainre
 
 # About PraxisColour
 
-This is a R package to employ the unofficial Praxis Centre for Policy
-Studies colour palettes. The package was created following the examples
-of [Alex Quent](https://github.com/JAQuent/MRColour) and [Drsimonj’s
-blog
+This is a R package to employ the unofficial [Praxis Centre for Policy
+Studies](http://www.praxis.ee/en/) colour palette. The package was
+created based on [Alex Quent’s
+MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj’s blog
 post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
+
+\#Installing the package Start by installing the devtool’s package ’
+
+Then download this package from github
+
+``` r
+library(devtools)
+install_github("mvainre/PraxisColour")
+```
+
+Now you’re ready to use it:
+
+``` r
+library(PraxisColour)
+```
 
 \#The colour palettes
 
