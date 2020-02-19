@@ -1,8 +1,7 @@
-#Function to extract praxis_colors as hex codes
-#
-#@param ... Character names of praxis_colors
-#
-#
+#' Function to extract praxis_cols colors as hex codes
+#'
+#' @param ... Character names of praxis_cols
+
 praxis_cols <- function(...) {
   cols <- c(...)
 
