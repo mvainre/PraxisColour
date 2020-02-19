@@ -70,11 +70,11 @@ install.packages("devtools")
 ```
 
 Then download this package from github
-```{r GithubDL, message=FALSE, warning=FALSE}
+```{r GithubDL, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 library(devtools)
 install_github("mvainre/PraxisColour")
 ```
 Now you're ready to use it:
-```{r Run, message=FALSE, warning=FALSE, include=TRUE}
+```{r Run, message=FALSE, warning=FALSE, eval=FALSE,  include=TRUE}
 library(PraxisColour)
 ```

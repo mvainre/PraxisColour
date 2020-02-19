@@ -98,42 +98,6 @@ library(devtools)
 install_github("mvainre/PraxisColour")
 ```
 
-    ##   
-      
-      
-       checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' ...
-      
-       checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' ... 
-      
-    v  checking for file 'C:\Users\maris\AppData\Local\Temp\RtmpklSG5R\remotes49d456f618de\mvainre-PraxisColour-206b44e/DESCRIPTION' (733ms)
-    ## 
-      
-      
-      
-    -  preparing 'PraxisColour':
-    ##    checking DESCRIPTION meta-information ...
-      
-       checking DESCRIPTION meta-information ... 
-      
-    v  checking DESCRIPTION meta-information
-    ## 
-      
-      
-      
-    -  checking for LF line-endings in source and make files and shell scripts
-    ## 
-      
-    -  checking for empty or unneeded directories
-    ## 
-      
-      
-      
-    -  building 'PraxisColour_0.1.0.tar.gz'
-    ## 
-      
-       
-    ## 
-
 Now you’re ready to use it:
 
 ``` r
