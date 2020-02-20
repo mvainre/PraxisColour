@@ -6,4 +6,4 @@ praxis_colours <- c(
   `yellow`     = "#ffd85d",
   `light blue` = "#8cd9fc",
   `green`      = "#bae18f",
-  `grey`       = "#f2f2f2")
+  `grey`       = "#d9d9d9")

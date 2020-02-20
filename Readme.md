@@ -1,4 +1,4 @@
-PraxisColour Readme
+Readme
 ================
 Maris Vainre
 19/02/2020
@@ -17,6 +17,7 @@ post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
 library(ggplot2)
 library(hrbrthemes)
 library(PraxisColour)
+library(tidyverse)
 
 praxis_pal("main")(3)
 ```
@@ -34,7 +35,7 @@ praxis_pal("main")(10)
 praxis_pal("binary")(2)
 ```
 
-    ## [1] "#00599D" "#F2F2F2"
+    ## [1] "#00599D" "#D9D9D9"
 
 ``` r
 praxis_pal("cool")(3)
@@ -52,7 +53,7 @@ praxis_pal("traffic")(3)
 praxis_pal("full")(7)
 ```
 
-    ## [1] "#00599D" "#FF6651" "#84DAD3" "#FFD85D" "#8CD9FC" "#BAE18F" "#F2F2F2"
+    ## [1] "#00599D" "#FF6651" "#84DAD3" "#FFD85D" "#8CD9FC" "#BAE18F" "#D9D9D9"
 
 ## Ggplot examples
 
@@ -63,12 +64,33 @@ ggplot(mtcars, aes(hp, mpg)) +
     theme_ipsum_tw(grid=FALSE)
 ```
 
-![](Readme_files/figure-gfm/dots-1.png)<!-- -->
+![](Readme_files/figure-gfm/dotsSin-1.png)<!-- -->
 
 ``` r
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis()  +
+    theme_ipsum_tw(grid=FALSE)
+```
+
+![](Readme_files/figure-gfm/dots3-1.png)<!-- -->
+
+``` r
+iris.sub <- iris %>%
+  filter(Species != "versicolor")
+
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "binary")  +
+    theme_ipsum_tw(grid=FALSE)
+```
+
+![](Readme_files/figure-gfm/dotsBin-1.png)<!-- -->
+
+``` r
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "cool")  +
     theme_ipsum_tw(grid=FALSE)
 ```
 
@@ -82,6 +104,15 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 ```
 
 ![](Readme_files/figure-gfm/bargradient-1.png)<!-- -->
+
+``` r
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar()+
+  scale_fill_praxis(palette = "full", guide = "none") +
+  theme_ipsum(grid=FALSE, axis_text_size = 6)
+```
+
+![](Readme_files/figure-gfm/barAll-1.png)<!-- -->
 
 # Installing the package
 

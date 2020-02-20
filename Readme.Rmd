@@ -1,8 +1,9 @@
 ---
-title: "PraxisColour Readme"
+title: "Readme"
 date: "19/02/2020"
 author: "Maris Vainre"
 output: github_document
+
 ---
 
 ``````{r setup, include=FALSE}
@@ -19,6 +20,7 @@ This is a R package to employ the unofficial [Praxis Centre for Policy Studies](
 library(ggplot2)
 library(hrbrthemes)
 library(PraxisColour)
+library(tidyverse)
 
 praxis_pal("main")(3)
 praxis_pal("main")(10)
@@ -41,25 +43,53 @@ praxis_pal("full")(7)
 
 ## Ggplot examples
 
-```{r dots, warning=FALSE}
+```{r dotsSin, warning=FALSE}
 ggplot(mtcars, aes(hp, mpg)) +
     geom_point(color = praxis_cols("blue"),
                size = 8, alpha = .8) +
     theme_ipsum_tw(grid=FALSE)
 ```
 
-```{r dots2, warning=FALSE}
+```{r dots3, warning=FALSE}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis()  +
     theme_ipsum_tw(grid=FALSE)
 ```
+
+```{r dotsBin, warning=FALSE}
+
+iris.sub <- iris %>%
+  filter(Species != "versicolor")
+
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "binary")  +
+    theme_ipsum_tw(grid=FALSE)
+```
+
+
+```{r dots2, warning=FALSE}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "cool")  +
+    theme_ipsum_tw(grid=FALSE)
+```
+
 ``` {r bargradient, warning=FALSE}
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
   geom_bar() +
   scale_fill_praxis(palette = "traffic", guide = "none") +
   theme_ipsum_tw(grid=FALSE, axis_text_size = 6)
 ```
+
+``` {r barAll, warning=FALSE}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar()+
+  scale_fill_praxis(palette = "full", guide = "none") +
+  theme_ipsum(grid=FALSE, axis_text_size = 6)
+```
+
 
 # Installing the package
 
