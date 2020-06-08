@@ -4,7 +4,7 @@ Title: Praxis' colour scheme
 Version: 0.1.0
 Author: person("Maris", "Vainre", email = "maris@praxis.ee", role = c("aut", "cre"))
 Maintainer: The package maintainer <maris@praxis.ee>
-Description: This package employs Praxis Centre for Policy Studies (in Estonia) unofficial colour scheme.
+Description: This package employs Praxis Centre for Policy Studies (in Estonia) official colour scheme.
 License: AGPL-3.0
 Encoding: UTF-8
 LazyData: true

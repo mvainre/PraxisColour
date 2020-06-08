@@ -1,7 +1,7 @@
 Readme
 ================
 Maris Vainre
-19/02/2020
+08/06/2020
 
 # About PraxisColour
 
@@ -22,38 +22,38 @@ library(tidyverse)
 praxis_pal("main")(3)
 ```
 
-    ## [1] "#00599D" "#FF6651" "#84DAD3"
+    ## [1] "#B2D2EC" "#3F6ECD" "#F14D4D"
 
 ``` r
 praxis_pal("main")(10)
 ```
 
-    ##  [1] "#00599D" "#385B8C" "#715E7B" "#AA616A" "#E26459" "#F1725F" "#D68C7C"
-    ##  [8] "#BAA699" "#9FC0B6" "#84DAD3"
+    ##  [1] "#B2D2EC" "#98BBE5" "#7EA5DE" "#658FD7" "#4B79D0" "#526ABE" "#7A63A2"
+    ##  [8] "#A15B85" "#C95469" "#F14D4D"
 
 ``` r
 praxis_pal("binary")(2)
 ```
 
-    ## [1] "#00599D" "#D9D9D9"
+    ## [1] "#3F6ECD" "#A5A5A5"
 
 ``` r
 praxis_pal("cool")(3)
 ```
 
-    ## [1] "#00599D" "#84DAD3" "#8CD9FC"
+    ## [1] "#B2D2EC" "#3F6ECD" "#A5A5A5"
 
 ``` r
-praxis_pal("traffic")(3)
+praxis_pal("monochrome")(3)
 ```
 
-    ## [1] "#FF6651" "#FFD85D" "#BAE18F"
+    ## [1] "#000000" "#525252" "#A5A5A5"
 
 ``` r
 praxis_pal("full")(7)
 ```
 
-    ## [1] "#00599D" "#FF6651" "#84DAD3" "#FFD85D" "#8CD9FC" "#BAE18F" "#D9D9D9"
+    ## [1] "#B2D2EC" "#527ED2" "#B55877" "#782626" "#363636" "#AAA49A" "#C8A366"
 
 ## Ggplot examples
 
@@ -61,7 +61,8 @@ praxis_pal("full")(7)
 ggplot(mtcars, aes(hp, mpg)) +
     geom_point(color = praxis_cols("blue"),
                size = 8, alpha = .8) +
-    theme_ipsum_tw(grid=FALSE)
+    import_roboto_condensed()+
+    theme_ipsum_rc(grid=FALSE)
 ```
 
 ![](Readme_files/figure-gfm/dotsSin-1.png)<!-- -->
@@ -70,7 +71,7 @@ ggplot(mtcars, aes(hp, mpg)) +
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis()  +
-    theme_ipsum_tw(grid=FALSE)
+    theme_ipsum_rc(grid=FALSE)
 ```
 
 ![](Readme_files/figure-gfm/dots3-1.png)<!-- -->
@@ -82,34 +83,37 @@ iris.sub <- iris %>%
 ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis(palette = "binary")  +
-    theme_ipsum_tw(grid=FALSE)
+    theme_ipsum_rc(grid=FALSE)
 ```
 
 ![](Readme_files/figure-gfm/dotsBin-1.png)<!-- -->
 
 ``` r
+iris.sub <- iris %>%
+  filter(Species != "versicolor")
+
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "monochrome")  +
+    theme_ipsum_rc(grid=FALSE)
+```
+
+![](Readme_files/figure-gfm/dotsMono-1.png)<!-- -->
+
+``` r
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis(palette = "cool")  +
-    theme_ipsum_tw(grid=FALSE)
+    theme_ipsum_rc(grid=FALSE)
 ```
 
 ![](Readme_files/figure-gfm/dots2-1.png)<!-- -->
 
 ``` r
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
-  geom_bar() +
-  scale_fill_praxis(palette = "traffic", guide = "none") +
-  theme_ipsum_tw(grid=FALSE, axis_text_size = 6)
-```
-
-![](Readme_files/figure-gfm/bargradient-1.png)<!-- -->
-
-``` r
-ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
   geom_bar()+
   scale_fill_praxis(palette = "full", guide = "none") +
-  theme_ipsum(grid=FALSE, axis_text_size = 6)
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)
 ```
 
 ![](Readme_files/figure-gfm/barAll-1.png)<!-- -->
