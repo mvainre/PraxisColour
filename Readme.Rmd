@@ -1,6 +1,6 @@
 ---
 title: "Readme"
-date: "08/06/2020"
+date: "27/03/2021"
 author: "Maris Vainre"
 output: github_document
 
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 # About PraxisColour
 
-This is a R package to employ the unofficial [Praxis Centre for Policy Studies](http://www.praxis.ee/en/) colour palette. The package was created based on [Alex Quent's MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj's blog post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
+This is a R package to employ the now almost-official [Praxis Centre for Policy Studies](http://www.praxis.ee/en/) colour palette. The package was created based on [Alex Quent's MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj's blog post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 
 # The colour palettes
 
@@ -29,6 +29,12 @@ praxis_pal("main")(10)
 ```{r paletteBinary}
 praxis_pal("binary")(2)
 ```
+
+```{r paletteBlackGold}
+praxis_pal("blackgold")(2)
+```
+
+
 ```{r paletteCool}
 praxis_pal("cool")(3)
 ```
@@ -80,12 +86,31 @@ ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
     theme_ipsum_rc(grid=FALSE)
 ```
 
+```{r dotsBG, warning=FALSE}
+
+iris.sub <- iris %>%
+  filter(Species != "versicolor")
+
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "blackgold")  +
+    theme_ipsum_rc(grid=FALSE)
+```
+
 ```{r dots2, warning=FALSE}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis(palette = "cool")  +
     theme_ipsum_rc(grid=FALSE)
 ```
+
+```{r dotsall, warning=FALSE}
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "full")  +
+    theme_ipsum_rc(grid=FALSE)
+```
+
 
 ``` {r barAll, warning=FALSE}
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +

@@ -1,8 +1,9 @@
 # The unofficial colours of Praxis
 praxis_colours <- c(
-  `lightblue` = "#b2d2ec",
-  `blue`      = "#3F6ECD",
+  `lightblue` = "#98C9F6",
+  `blue`      = "#3455CC",
   `red`       = "#F14D4D",
-  `black`     = "#000000",
-  `grey`       = "#A5A5A5",
+  `yellow`    = "#FFCE19",
+  `black`     = "#262626",
+  `grey`      = "#A5A5A5",
   `gold`      = "#C8A366")

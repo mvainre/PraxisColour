@@ -1,13 +1,13 @@
 Readme
 ================
 Maris Vainre
-08/06/2020
+27/03/2021
 
 # About PraxisColour
 
-This is a R package to employ the unofficial [Praxis Centre for Policy
-Studies](http://www.praxis.ee/en/) colour palette. The package was
-created based on [Alex Quent’s
+This is a R package to employ the now almost-official [Praxis Centre for
+Policy Studies](http://www.praxis.ee/en/) colour palette. The package
+was created based on [Alex Quent’s
 MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj’s blog
 post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 
@@ -22,38 +22,44 @@ library(tidyverse)
 praxis_pal("main")(3)
 ```
 
-    ## [1] "#B2D2EC" "#3F6ECD" "#F14D4D"
+    ## [1] "#98C9F6" "#3455CC" "#F14D4D"
 
 ``` r
 praxis_pal("main")(10)
 ```
 
-    ##  [1] "#B2D2EC" "#98BBE5" "#7EA5DE" "#658FD7" "#4B79D0" "#526ABE" "#7A63A2"
-    ##  [8] "#A15B85" "#C95469" "#F14D4D"
+    ##  [1] "#98C9F6" "#81AFEC" "#6B95E3" "#557BDA" "#3F61D0" "#4954BD" "#7252A1"
+    ##  [8] "#9C5085" "#C64E69" "#F14D4D"
 
 ``` r
 praxis_pal("binary")(2)
 ```
 
-    ## [1] "#3F6ECD" "#A5A5A5"
+    ## [1] "#3455CC" "#A5A5A5"
+
+``` r
+praxis_pal("blackgold")(2)
+```
+
+    ## [1] "#262626" "#C8A366"
 
 ``` r
 praxis_pal("cool")(3)
 ```
 
-    ## [1] "#B2D2EC" "#3F6ECD" "#A5A5A5"
+    ## [1] "#98C9F6" "#3455CC" "#A5A5A5"
 
 ``` r
 praxis_pal("monochrome")(3)
 ```
 
-    ## [1] "#000000" "#525252" "#A5A5A5"
+    ## [1] "#262626" "#656565" "#A5A5A5"
 
 ``` r
 praxis_pal("full")(7)
 ```
 
-    ## [1] "#B2D2EC" "#527ED2" "#B55877" "#782626" "#363636" "#AAA49A" "#C8A366"
+    ## [1] "#98C9F6" "#3455CC" "#F14D4D" "#FFCE19" "#262626" "#A5A5A5" "#C8A366"
 
 ## Ggplot examples
 
@@ -101,6 +107,18 @@ ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
 ![](Readme_files/figure-gfm/dotsMono-1.png)<!-- -->
 
 ``` r
+iris.sub <- iris %>%
+  filter(Species != "versicolor")
+
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "blackgold")  +
+    theme_ipsum_rc(grid=FALSE)
+```
+
+![](Readme_files/figure-gfm/dotsBG-1.png)<!-- -->
+
+``` r
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
   scale_color_praxis(palette = "cool")  +
@@ -108,6 +126,15 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
 ```
 
 ![](Readme_files/figure-gfm/dots2-1.png)<!-- -->
+
+``` r
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point(size = 2) +
+  scale_color_praxis(palette = "full")  +
+    theme_ipsum_rc(grid=FALSE)
+```
+
+![](Readme_files/figure-gfm/dotsall-1.png)<!-- -->
 
 ``` r
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
