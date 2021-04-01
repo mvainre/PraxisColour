@@ -2,10 +2,11 @@
 #' @export
 
 praxis_palettes <- list(
-  `main`      = praxis_cols("lightblue", "blue", "red"),
+  `main`      = praxis_cols("blue", "lightblue", "black", "red", "yellow", "grey", "gold"),
+  `contrast`  = praxis_cols("blue", "red", "yellow"),
+  `cool`      = praxis_cols("blue", "grey", "lightblue"),
   `binary`    = praxis_cols("blue", "grey"),
-  `monochrome`= praxis_cols("black","grey"),
   `blackgold` = praxis_cols("black", "gold"),
-  `cool`      = praxis_cols("lightblue", "blue", "grey"),
-  `full`      = praxis_cols("lightblue", "blue", "red", "yellow", "black", "grey", "gold")
+  `monochrome`= praxis_cols("black","grey")
+
 )
