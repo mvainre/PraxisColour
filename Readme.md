@@ -112,6 +112,10 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 
 ![](Readme_files/figure-gfm/barAll-1.png)<!-- -->
 
+A boxplot example contributed by Märt Masso.
+
+<img src="Readme_files/figure-gfm/Boxplot.png" width="75%" style="display: block; margin: auto auto auto 0;" />
+
 ``` r
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 2) +
