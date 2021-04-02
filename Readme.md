@@ -114,7 +114,7 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 
 A boxplot example contributed by Märt Masso.
 
-<img src="Readme_files/figure-gfm/Boxplot.png" width="75%" style="display: block; margin: auto auto auto 0;" />
+<img src="Readme_files/figure-gfm/Boxplot.png" width="90%" style="display: block; margin: auto auto auto 0;" />
 
 ``` r
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +

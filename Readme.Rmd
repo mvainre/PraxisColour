@@ -201,7 +201,7 @@ ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 
 A boxplot example contributed by Märt Masso.
 
-```{r boxplot, echo=FALSE, fig.align='left', fig.cap=, message=FALSE, warning=FALSE, out.width="75%",fig.cap = ""}
+```{r boxplot, echo=FALSE, fig.align='left', fig.cap=, message=FALSE, warning=FALSE, out.width="90%",fig.cap = ""}
 
 knitr::include_graphics("Readme_files/figure-gfm/Boxplot.png")
 
