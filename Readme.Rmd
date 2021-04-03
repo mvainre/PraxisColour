@@ -399,7 +399,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ```{r dotsBin, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolour")
+  filter(Species != "versicolor")
 
 ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
@@ -411,7 +411,7 @@ ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ```{r dotsBG, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolour")
+  filter(Species != "versicolor")
 
 ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
@@ -422,7 +422,7 @@ ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
 ```{r dotsMono, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolour")
+  filter(Species != "versicolor")
 
 ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
