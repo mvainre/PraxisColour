@@ -16,3 +16,5 @@ scale_color_praxis <- function(palette = "main", discrete = TRUE, reverse = FALS
     scale_color_gradientn(colours = pal(256), ...)
   }
 }
+
+scale_colour_praxis <- scale_color_praxis

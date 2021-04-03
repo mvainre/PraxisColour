@@ -1,9 +1,8 @@
 ---
 title: "Readme"
-date: "01/04/2021"
+date: "03/04/2021"
 author: "Maris Vainre"
 output: github_document
-
 ---
 
 ``````{r setup, include=FALSE}
@@ -22,6 +21,8 @@ df <- data.frame(x, y,z)
 This is an R package to employ the official [Praxis Centre for Policy Studies](http://www.praxis.ee/en/) colour palette. The package was created based on [Alex Quent's MRColour](https://github.com/JAQuent/MRColour) and [Drsimonj's blog post](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 
 # The colour palettes
+
+## Main
 
 ```{r palettesMain3, message=FALSE, warning=FALSE, include=TRUE}
 library(PraxisColour)
@@ -50,6 +51,8 @@ swatch7
 ```
 
 ## Sub-palettes
+
+### Qualitative
 
 ```{r paletteContrast}
 praxis_pal("contrast")(3)
@@ -173,22 +176,176 @@ swatch2
 ```
 
 
+
+### Sequential palettes
+
+
+```{r paletteSeqB}
+praxis_pal("seq_blue")(7)
+```
+
+```{r swatchSeqBlu, fig.width=10,fig.height=2, echo=FALSE}
+swatch9 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "seq_blue", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch9
+```
+
+
+```{r paletteSeqY}
+praxis_pal("seq_yellow")(7)
+```
+
+```{r swatchSeqlYellow, fig.width=10,fig.height=2, echo=FALSE}
+swatch16 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "seq_yellow", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch16
+```
+
+```{r paletteSeqR}
+praxis_pal("seq_red")(7)
+```
+
+```{r swatchSeqR, fig.width=10,fig.height=2, echo=FALSE}
+swatch10 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "seq_red", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch10
+```
+
+```{r paletteSeqg}
+praxis_pal("seq_gold")(7)
+```
+
+```{r swatchSeqlG, fig.width=10,fig.height=2, echo=FALSE}
+swatch16 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "seq_gold", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch16
+```
+
+```{r paletteSeqBla}
+praxis_pal("seq_black")(7)
+```
+
+```{r swatchSeqBla, fig.width=10,fig.height=2, echo=FALSE}
+swatch11 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "seq_black", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch11
+```
+
+### Diverging palettes
+
+
+```{r paletteDivbr}
+praxis_pal("diverging_br")(7)
+```
+
+```{r swatchDivbr, fig.width=10,fig.height=2, echo=FALSE}
+swatch8 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "diverging_br", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch8
+```
+```{r paletteDivbg}
+praxis_pal("diverging_bg")(7)
+```
+
+
+```{r swatchDiv_bg, fig.width=10,fig.height=2, echo=FALSE}
+swatch12 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "diverging_bg", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch12
+```
+
+```{r paletteDivby}
+praxis_pal("diverging_by")(7)
+```
+
+
+```{r swatchDiv_by, fig.width=10,fig.height=2, echo=FALSE}
+swatch12 <- ggplot(df7, aes(x, y, fill = z))+
+  geom_bar(stat="identity") +
+  scale_fill_praxis(palette = "diverging_by", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank())+
+  ylim(c(0,1))
+  
+swatch12
+```
+
+
 ## `ggplot` examples
 
 You can specify a colour from the following: `praxis_cols("blue", "lightblue", "black", "red", "yellow", "grey", "gold")`
 
 ```{r dotsSin, warning=FALSE}
 ggplot(mtcars, aes(hp, mpg)) +
-    geom_point(color = praxis_cols("blue"),
+    geom_point(colour = praxis_cols("blue"),
                size = 8, alpha = .8) +
     import_roboto_condensed()+
     theme_ipsum_rc(grid=FALSE)
 ```
 
 ```{r dotsall, warning=FALSE}
-ggplot(mpg, aes(displ, hwy, color = class)) +
+ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "main")  +
+  scale_colour_praxis(palette = "main")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 
@@ -196,6 +353,22 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
   geom_bar()+
   scale_fill_praxis(palette = "main", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)
+```
+
+
+``` {r barAllseq, warning=FALSE}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar()+
+  scale_fill_praxis(palette = "seq_blue", guide = "none") +
+  theme_ipsum_rc(grid=FALSE, axis_text_size = 6)
+```
+
+
+``` {r barAlldiv, warning=FALSE}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar()+
+  scale_fill_praxis(palette = "diverging_br", guide = "none") +
   theme_ipsum_rc(grid=FALSE, axis_text_size = 6)
 ```
 
@@ -208,17 +381,17 @@ knitr::include_graphics("Readme_files/figure-gfm/Boxplot.png")
 ```
 
 ```{r dotsCon, warning=FALSE}
-ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "contrast")  +
+  scale_colour_praxis(palette = "contrast")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 
 
 ```{r dots2, warning=FALSE}
-ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "cool")  +
+  scale_colour_praxis(palette = "cool")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 
@@ -226,11 +399,11 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
 ```{r dotsBin, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolor")
+  filter(Species != "versicolour")
 
-ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "binary")  +
+  scale_colour_praxis(palette = "binary")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 
@@ -238,22 +411,22 @@ ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
 ```{r dotsBG, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolor")
+  filter(Species != "versicolour")
 
-ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "blackgold")  +
+  scale_colour_praxis(palette = "blackgold")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 
 ```{r dotsMono, warning=FALSE}
 
 iris.sub <- iris %>%
-  filter(Species != "versicolor")
+  filter(Species != "versicolour")
 
-ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, color = Species)) +
+ggplot(iris.sub, aes(Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
-  scale_color_praxis(palette = "monochrome")  +
+  scale_colour_praxis(palette = "monochrome")  +
     theme_ipsum_rc(grid=FALSE)
 ```
 

@@ -1,7 +1,7 @@
 Package: PraxisColour
 Type: Package
 Title: Praxis' colour scheme
-Version: 0.1.0
+Version: 1.0.0
 Author: person("Maris", "Vainre", email = "maris@praxis.ee", role = c("aut", "cre"))
 Maintainer: The package maintainer <maris@praxis.ee>
 Description: This package employs Praxis Centre for Policy Studies (in Estonia) official colour scheme.
